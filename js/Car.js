@@ -54,7 +54,7 @@ function carClass() {
   this.reset = function(whichImage, carName) {
     this.name = carName;
     this.myCarPic = whichImage;
-     this.speed = 0;
+    //  this.speed = 0;
 
     for (var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
       for (var eachCol=0;eachCol<TRACK_COLS;eachCol++) {
@@ -85,7 +85,7 @@ function carClass() {
     
   
     }else {
-      nextY += GRAVITY + 2;
+      nextY += GRAVITY + 10;
       console.log("GRAVITY")
     }
     
@@ -102,6 +102,7 @@ function carClass() {
    
       if (this.keyHeld_TurnLeft) {
         nextX -= PLAYER_MOVEMENT_SPEED;
+        // switchCostume(costumeList[1]);
         // this.speed -= REVERSE_POWER;
         console.log("keyHeld_TurnLeft");
        
