@@ -14,7 +14,7 @@ function countLoadedImagesAndLaunchIfReady() {
 
 function beginLoadingImage(imgVar,fileName){
     imgVar.onload = countLoadedImagesAndLaunchIfReady;
-    imgVar.src = "carRaceImages/"+ fileName; 
+    imgVar.src = "images/"+ fileName; 
 }
 
 function loadImageForTrackCode(trackCode, fileName){
@@ -27,7 +27,7 @@ function loadImages() {
         {varName: carPic, theFile:"warrior.png"},
         
         {trackType: TRACK_ROAD, theFile:"track_road2.png"},
-        {trackType: TRACK_WALL, theFile:"bricks2.png"},
+        {trackType: TRACK_WALL, theFile:"bricks3.png"},
         {trackType: TRACK_GOAL, theFile:"track_door.png"},
         {trackType: TRACK_TREE, theFile:"track_ladder.png"},
         {trackType: TRACK_GAS, theFile:"track_key.png"},

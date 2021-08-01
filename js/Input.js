@@ -7,6 +7,7 @@ const KEY_W = 87; // keyboard W
 const KEY_A = 65; //keyboard A
 const KEY_S = 83;// keyboard S
 const KEY_D =68 ;//keyboard D
+const KEY_SPACEBAR = 32;//JUMP
 
 // const KEY_E =
 
@@ -15,29 +16,19 @@ var mouseY = 0;
 
 function setupInput(){
   canvas.addEventListener('mousemove', updateMousePosition);
-            
   document.addEventListener('keydown',keyPressed);
   document.addEventListener('keyup',keyReleased);
 
-  blackCar.setupInput(KEY_W, KEY_D, KEY_S, KEY_A);
+  blackCar.setupInput(KEY_W, KEY_D, KEY_S, KEY_A, KEY_SPACEBAR);
 //   blueCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
 
 }
 
 function updateMousePosition(mouseEvent) {
-    var rect = canvas.getBoundingClientRect(); 
+    var rect = canvas.getBoundingClientRect();  f
     var root = document.documentElement; 
     mouseX = mouseEvent.clientX - rect.left - root.scrollLeft;
     mouseY = mouseEvent.clientY - rect.top - root.scrollTop; 
-
-   
-
-    //Cheat to test car in any position;
-    // carX = mouseX;
-    // carY = mouseY;
-    // carSpeedX = 4;
-    // carSpeedY = -4;
-
 }
 
 
@@ -56,6 +47,10 @@ function keySet(keyEvent,whichCar, setTo){
     }
     if(keyEvent.keyCode == whichCar.controlKeyDown){
          whichCar.keyHeld_Reverse = setTo;
+    }
+
+    if(keyEvent.keyCode == whichCar.controlKeyJump){
+        whichCar.keyHeld_Jump = setTo;
     }
 
 }

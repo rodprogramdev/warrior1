@@ -102,44 +102,54 @@
             
         }
 
-        // function newLevel() {
-        //     setInterval(function(){  nextLevel();      }, 3000);
-        //   }
 
-        function carTrackHandling(whichCar) {
-          var carTrackCol = Math.floor(whichCar.x / TRACK_W);
-          var carTrackRow = Math.floor(whichCar.y / TRACK_H);
-          var trackIndexUnderCar = rowColToArrayIndex(carTrackCol, carTrackRow);
+    //     function carTrackHandling(whichCar) {
+    //       var carTrackCol = Math.floor(whichCar.x / TRACK_W);
+    //       var carTrackRow = Math.floor(whichCar.y / TRACK_H);
+    //       var trackIndexUnderCar = rowColToArrayIndex(carTrackCol, carTrackRow);
 
-          if (carTrackCol >= 0 && carTrackCol < TRACK_COLS &&
-              carTrackRow >= 0 && carTrackRow < TRACK_ROWS) {
-              var tileHere = returnTileTypeAtColRow(carTrackCol,carTrackRow);
+    //       if (carTrackCol >= 0 && carTrackCol < TRACK_COLS &&
+    //           carTrackRow >= 0 && carTrackRow < TRACK_ROWS) {
+    //           var tileHere = returnTileTypeAtColRow(carTrackCol,carTrackRow);
                 
 
-               if (tileHere == TRACK_GOAL){
-                // whichCar.speed *= -0.5;
-                //   alert(whichCar.name + "Wins!");
-                // console.log(whichCar.name + "WINS!");
-                // loadLevel(levelList);
-                //  var audio = new Audio('esrom.wav')
-                // var audio = new Audio('blackfirewins.wav')
+    //            if (tileHere == TRACK_GOAL){
+    //             // whichCar.speed *= -0.5;
+    //             //   alert(whichCar.name + "Wins!");
+    //             // console.log(whichCar.name + "WINS!");
+    //             // loadLevel(levelList);
+    //             //  var audio = new Audio('esrom.wav')
+    //             // var audio = new Audio('blackfirewins.wav')
                
-                    var audio = new Audio('esrom.wav')
-                    audio.play();
+    //                 var audio = new Audio('esrom.wav')
+    //                 audio.play();
                
                    
-                       nextLevel();     
+    //                    nextLevel();     
                    
-                        // newLevel()
+    //                     // newLevel()
                     
-              }else if (tileHere != TRACK_ROAD) {
-                     whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;
-			         whichCar.y -= Math.sin(whichCar.ang) * whichCar.speed;
-                     whichCar.speed *= -0.5;
-              }// end of track found
-          }// end of valid col and row
-       }// end of carTrackHandling function
+    //           }else if (tileHere != TRACK_ROAD) {
+    //                  whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;
+	// 		         whichCar.y -= Math.sin(whichCar.ang) * whichCar.speed;
+    //                  whichCar.speed *= -0.5;
+    //           }// end of track found
+    //       }// end of valid col and row
+    //    }// end of carTrackHandling function
 
+    function getTileIndexAtPixelCoord(atX, atY) {
+        var warriorWorldCol = Math.floor(atX / TRACK_W);
+        var warriorWorldRow = Math.floor(atY / TRACK_H);
+        var worldIndexUnderWarrior = rowColToArrayIndex(warriorWorldCol, warriorWorldRow);
+    
+        if(warriorWorldCol >= 0 && warriorWorldCol < TRACK_COLS &&
+            warriorWorldRow >= 0 && warriorWorldRow < TRACK_ROWS) {
+            return worldIndexUnderWarrior;
+        } // end of valid col and row
+    
+        return undefined;
+    } // end of warriorWorldHandling func
+    
       
 
       function rowColToArrayIndex(col, row) {
