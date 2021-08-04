@@ -139,7 +139,10 @@ function carClass() {
    case TRACK_KEY:
      console.log(this.name + " THIS IS THE KEY");
      trackGrid[walkIntoTileIndex] = TRACK_ROAD;
-    //   break;
+      break;
+    case WORLD_TRAP:
+      alert("GAME OVER");
+      break;
     default:
       break;
   }
