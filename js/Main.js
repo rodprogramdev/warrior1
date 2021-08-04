@@ -18,7 +18,7 @@
             setInterval(updateAll, 1000 / framesPersecond);
             
             setupInput();
-            var audio = new Audio('BeepBox-Song.wav')
+            var audio = new Audio('Intro-BeepBox-Song.wav')
             audio.play();
             loadLevel(levelList[levelNow]);
             // trackGrid = levelOne;
