@@ -55,6 +55,8 @@ function carClass() {
   this.reset = function(whichImage, carName) {
     this.name = carName;
     this.myCarPic = whichImage;
+    this.keysHeld = 0;
+    this.updateKeyReadout();
     //  this.speed = 0;
 
     for (var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
@@ -71,6 +73,10 @@ function carClass() {
     } // endo frow for
    console.log("NO PLAYER START FOUND!");
   } // end of carReset function
+
+ this.updateKeyReadout= function(){
+   document.getElementById("debugText").innerHTML = "Keys: " + this.keysHeld;
+ }
 
   this.move = function() {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
@@ -136,8 +142,17 @@ function carClass() {
       console.log(this.name + " WINS!");
       loadLevel(levelOne);
       break;
+    case TRACK_DOOR:
+      if(this.keysHeld > 0){
+        this.keysHeld--;
+        this.updateKeyReadout();
+        trackGrid[walkIntoTileIndex] = TRACK_ROAD;
+      }  
+        break;
    case TRACK_KEY:
      console.log(this.name + " THIS IS THE KEY");
+     this.keysHeld++;
+     this.updateKeyReadout();
      trackGrid[walkIntoTileIndex] = TRACK_ROAD;
       break;
     case WORLD_TRAP:
