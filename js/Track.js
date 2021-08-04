@@ -4,14 +4,14 @@
         const TRACK_COLS = 20;
         const TRACK_ROWS = 15; 
         var levelOne = [ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,  
-            1,1,1,1,1,0,0,0,6,0,0,0,0,0,1,0,0,1,1,1,
+            1,1,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1,1,1,
             1,1,1,1,1,0,0,0,6,0,0,5,0,0,1,0,0,0,0,1,
             1,1,1,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,1,
             1,1,0,0,8,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,
             1,1,0,0,4,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,  
             1,1,0,0,4,1,1,1,1,1,0,0,1,0,0,0,1,0,0,1,
             1,0,0,0,4,0,0,0,0,1,0,0,1,0,0,0,1,0,0,1,
-            1,0,0,0,4,0,0,0,0,0,0,0,6,0,0,0,1,0,0,1,
+            1,0,0,0,4,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,
             1,5,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,1,
             1,0,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,  
             1,1,1,7,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -74,7 +74,7 @@
         const TRACK_PLAYERSTART = 2;
         const TRACK_GOAL = 3;
         const TRACK_LADDER = 4;
-        const TRACK_GAS = 5;
+        const TRACK_KEY = 5;
         const TRACK_DOOR = 6;
         const WORLD_TRAP =7;
         const TRACK_LADDER_CONNECTOR = 8;
@@ -158,6 +158,12 @@
         return col + TRACK_COLS * row;
     }
 
+    function tileTypeHasTransparency(checkTileType){
+        return(checkTileType == TRACK_GOAL ||
+               checkTileType == TRACK_KEY ||
+               checkTileType == TRACK_DOOR);
+    }
+
     function drawTracks() {
 
       var arrayIndex = 0;
@@ -170,6 +176,10 @@
               var tileKindHere = trackGrid[arrayIndex];
               var useImg = trackPics[tileKindHere];
            
+
+           if( tileTypeHasTransparency(tileKindHere) ) {
+				canvasContext.drawImage(trackPics[TRACK_ROAD],drawTileX,drawTileY);
+			}
 			canvasContext.drawImage(useImg,drawTileX,drawTileY);
               drawTileX += TRACK_W;
               arrayIndex++;

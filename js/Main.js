@@ -18,7 +18,8 @@
             setInterval(updateAll, 1000 / framesPersecond);
             
             setupInput();
-
+            var audio = new Audio('BeepBox-Song.wav')
+            audio.play();
             loadLevel(levelList[levelNow]);
             // trackGrid = levelOne;
             // blueCar.reset(otherCarPic, "Machine Raider");

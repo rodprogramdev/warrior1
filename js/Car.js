@@ -18,7 +18,8 @@ function carClass() {
   // this.ang = 0;
   // this.speed = 0;
   this.myCarPic;
-  this.name = "Untitled Car";
+  this.name = "Untitled Explorer";
+  this.keysHeld = 0;
 
   this.keyHeld_Gas = false;
   this.keyHeld_Reverse = false;
@@ -135,6 +136,10 @@ function carClass() {
       console.log(this.name + " WINS!");
       loadLevel(levelOne);
       break;
+   case TRACK_KEY:
+     console.log(this.name + " THIS IS THE KEY");
+     trackGrid[walkIntoTileIndex] = TRACK_ROAD;
+    //   break;
     default:
       break;
   }

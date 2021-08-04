@@ -40,7 +40,7 @@ function loadImages() {
         {trackType: TRACK_GOAL, theFile:"track_door.png"},
         {trackType: TRACK_LADDER, theFile:"track_ladder.png"},
         {trackType: TRACK_LADDER_CONNECTOR, theFile:"track_ladderConnector.png"},
-        {trackType: TRACK_GAS, theFile:"key2.png"},
+        {trackType: TRACK_KEY, theFile:"key2.png"},
         {trackType: TRACK_DOOR, theFile:"track_door.png"},
         {trackType: WORLD_TRAP, theFile:"world_trap.png"}
 
