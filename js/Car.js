@@ -138,10 +138,14 @@ function carClass() {
       this.x = nextX;
       this.y = nextY;
       break;
-    case TRACK_GOAL:
-      console.log(this.name + " WINS!");
-      loadLevel(levelOne);
-      break;
+    // case TRACK_GOAL:
+    //   console.log(this.name + " WINS!");
+    //   loadLevel(levelOne);
+    //   break;
+      case TRACK_SLINGSHOT:
+        loadLevel(levelTwo);
+        trackGrid[walkIntoTileIndex] = TRACK_ROAD;
+        break;
     case TRACK_DOOR:
       if(this.keysHeld > 0){
         this.keysHeld--;
@@ -155,6 +159,7 @@ function carClass() {
      this.updateKeyReadout();
      trackGrid[walkIntoTileIndex] = TRACK_ROAD;
       break;
+     
     case WORLD_TRAP:
       alert("GAME OVER");
       break;

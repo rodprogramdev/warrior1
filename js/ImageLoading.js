@@ -37,7 +37,7 @@ function loadImages() {
         
         {trackType: TRACK_ROAD, theFile:"track_road2.png"},
         {trackType: TRACK_WALL, theFile:"bricks3.png"},
-        {trackType: TRACK_GOAL, theFile:"track_door.png"},
+        {trackType: TRACK_SLINGSHOT, theFile:"tirador.png"},
         {trackType: TRACK_LADDER, theFile:"track_ladder.png"},
         {trackType: TRACK_LADDER_CONNECTOR, theFile:"track_ladderConnector.png"},
         {trackType: TRACK_KEY, theFile:"key2.png"},
