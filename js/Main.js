@@ -1,7 +1,7 @@
         var canvas, canvasContext; 
         
-        var blackCar = new carClass();
-        // var blueCar = new carClass();
+        var blackCar = new heroClass();
+        // var blueCar = new heroClass();
 
         window.onload = function () {
             canvas = document.getElementById('gameCanvas');
@@ -23,7 +23,7 @@
             loadLevel(levelList[levelNow]);
             // trackGrid = levelOne;
             // blueCar.reset(otherCarPic, "Machine Raider");
-            // blackCar.reset(carPic, "Black Fire");
+            // blackCar.reset(heroPic, "Black Fire");
            
           
         }
@@ -39,7 +39,7 @@
         function loadLevel(whichLevel){
             trackGrid = whichLevel.slice();
             // blueCar.reset(otherCarPic, "Machine Raider");
-            blackCar.reset(carPic, "Black Fire");
+            blackCar.reset(heroPic, "Black Fire");
 
             //trackGrid[30] = 5;
             //console.log(whichLevel[30]);
