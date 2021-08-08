@@ -147,7 +147,7 @@ function heroClass() {
       //   loadLevel(levelOne);
       //   break;
       case WORLD_SLINGSHOT:
-        loadLevel(levelFour);
+        loadLevel(levelTwo);
         trackGrid[walkIntoTileIndex] = WORLD_ROAD;
         break;
 
