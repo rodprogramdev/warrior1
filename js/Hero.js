@@ -18,6 +18,7 @@ function heroClass() {
   this.myCarPic;
   this.name = "Untitled Explorer";
   this.keysHeld = 0;
+  this.items = 0;
   // this.life = 3;
 
   this.keyHeld_Climb = false;
@@ -56,6 +57,7 @@ function heroClass() {
     this.keysHeld = 0;
     // this.life = 3;
     this.updateKeyReadout();
+    // this.updateItemsReadout();
     // this.updateLifeReadout();
     //  this.speed = 0;
 
@@ -78,6 +80,18 @@ function heroClass() {
     document.getElementById("debugText").innerHTML = "Keys: " + this.keysHeld;
   };
 
+  this.updateSlingshotReadout = function(){
+     document.getElementById("slingshot").innerHTML = "1. Slingshot";
+
+
+   }
+
+   this.updateSwordReadout = function(){
+
+    document.getElementById("sword").innerHTML = "2. Magic Sword";
+
+  }
+  
   this.move = function () {
     // this.speed *= GROUNDSPEED_DECAY_MULT;
 
@@ -87,9 +101,13 @@ function heroClass() {
     if (this.keyHeld_Jump) {
       nextY -= JUMP_POWER;
       console.log("JUMP_POWER");
-     } else{
-
-      nextY += GRAVITY + 10;
+     } else {
+     
+        nextY += GRAVITY + 10;
+        // if(this.keyHeld_Jump == false){
+        //   GRAVITY == 2;
+        // }
+      
      }
      
         
@@ -151,11 +169,15 @@ function heroClass() {
       case WORLD_SLINGSHOT:
         loadLevel(levelTwo);
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        this.updateSlingshotReadout();
+
         break;
 
       case WORLD_SWORD:
         loadLevel(levelFour);
         worldGrid[walkIntoTileIndex] = WORLD_ROAD;
+        this.updateSwordReadout();
+
         break;
       case WORLD_LOWERTUNNEL:
         loadLevel(levelThree);
