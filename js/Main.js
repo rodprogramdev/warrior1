@@ -1,7 +1,5 @@
 var canvas, canvasContext;
-
 var blueHero = new heroClass();
-// var blueCar = new heroClass();
 
 window.onload = function () {
   canvas = document.getElementById("gameCanvas");
@@ -9,8 +7,9 @@ window.onload = function () {
 
   colorRect(0, 0, canvas.width, canvas.height, "black");
   colorText("LOADING IMAGES", canvas.width / 2, canvas.height / 2, "white");
-
+  
   loadImages();
+  
 };
 
 function imageLoadingDoneSoStartGame() {
@@ -49,12 +48,14 @@ function updateAll() {
 
 function moveAll() {
   blueHero.move();
-  // blueCar.move();
+ 
 }
 
 function drawAll() {
   drawTracks();
   blueHero.draw();
-  // blueCar.draw();
+  
+  
+ 
 }
 
