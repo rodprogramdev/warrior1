@@ -35,9 +35,7 @@ function loadImages() {
  
   var imageList = [
     { varName: heroPic, theFile: "rocketman3.png"},
-    
-
-    // {trackType: WORLD_UPPERROAD, theFile:"world_road3.png"},
+      // {trackType: WORLD_UPPERROAD, theFile:"world_road3.png"},
     { trackType: WORLD_ROAD, theFile: "track_road2.png" },
     { trackType: WORLD_WALL, theFile: "bricks3.png" },
     { trackType: WORLD_SLINGSHOT, theFile: "tirador.png" },
